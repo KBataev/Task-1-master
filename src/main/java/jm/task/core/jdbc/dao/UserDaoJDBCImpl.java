@@ -25,6 +25,7 @@ public class UserDaoJDBCImpl implements UserDao {
                     "lastName VARCHAR(50),"+
                     "age INT)";
             stmt.execute(sql);
+
             System.out.println("Table created");
 
         }catch (Exception e) {
@@ -36,7 +37,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void dropUsersTable() {
         try(Connection conn =  Util.connect_db();
             Statement stmt = conn.createStatement();){
-            String sql = "Drop table users";
+            String sql = "Drop table IF EXISTS users";
             stmt.execute(sql);
             System.out.println("Table dropped");
 
