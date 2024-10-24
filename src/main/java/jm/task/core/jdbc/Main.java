@@ -13,5 +13,6 @@ public class Main {
     public static UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
     public static void main(String[] args) {
 
+
     }
 }
