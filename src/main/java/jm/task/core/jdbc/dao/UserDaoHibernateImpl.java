@@ -34,6 +34,8 @@ public class UserDaoHibernateImpl implements UserDao {
             session.getTransaction().commit();
         }catch (Exception e) {
             System.out.println(e.getMessage());
+
+
         }
     }
 
