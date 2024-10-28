@@ -9,39 +9,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
-   private static UserDaoJDBCImpl userDao = new UserDaoJDBCImpl();
-   private static UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
+//   private static UserDaoJDBCImpl user = new UserDaoJDBCImpl();
+   private static UserDaoHibernateImpl user = new UserDaoHibernateImpl();
 
     public void createUsersTable() {
-        userDaoHibernate.createUsersTable();
-        //userDao.createUsersTable();
+        user.createUsersTable();
+
     }
 
     public void dropUsersTable() {
-        //userDao.dropUsersTable();
-        userDaoHibernate.dropUsersTable();
+
+        user.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
-//        userDao.saveUser(name, lastName, age);
-        userDaoHibernate.saveUser(name, lastName, age);
+
+        user.saveUser(name, lastName, age);
     }
 
     public void removeUserById(long id) {
-//        userDao.removeUserById(id);
-        userDaoHibernate.removeUserById(id);
+
+        user.removeUserById(id);
     }
 
     public List<User> getAllUsers() {
 
-//        return new ArrayList<>(userDao.getAllUsers());
-        return new ArrayList<>(userDaoHibernate.getAllUsers());
+
+        return new ArrayList<>(user.getAllUsers());
     }
 
     public void cleanUsersTable() {
-//        userDao.cleanUsersTable();
-        userDaoHibernate.cleanUsersTable();
+
+        user.cleanUsersTable();
     }
+
 
 
 }
